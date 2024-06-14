@@ -1,0 +1,13 @@
+.loginRegSwitch {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginRegSwitch div {
+    margin: 2vw;
+    font-size: xx-large;
+    background-color: #0866ff;
+    color: white;
+}
