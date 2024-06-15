@@ -22,7 +22,19 @@
 
             </div>
             <div class="feed">
+                <button>Add a post</button>
+                <?php 
+                    require_once '../models/Post.php';
 
+                    $posts = Post::get10LastPosts();
+                   
+                    foreach($posts as $post){
+                        echo "<div class='post'>";
+                        echo "<h3>" . $post->getTitle() . "</h3>";
+                        echo "<p>" . $post->getBody() . "</p>";
+                        echo "</div>";
+                    }
+                ?>
             </div>
         </div>
     </div>
