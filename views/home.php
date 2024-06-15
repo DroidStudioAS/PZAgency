@@ -25,6 +25,9 @@
                 $user = unserialize($_SESSION['user']);
 
                 $friends = $user->getFriends($user->getId());
+                if(count($friends)==0){
+                    echo "<p> You Dont Follow Anybody </p>";
+                }
                 foreach($friends as $friend){
                     echo "<div>";
                     echo User::getUsernameById($friend);

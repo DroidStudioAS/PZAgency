@@ -30,7 +30,7 @@ public function getFriends($id){
     $stmt->bind_param("i", $id);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_assoc();
-    return count($result)==0 ? []:$result;
+    return $result==null? []:$result;
 }
 
 public static function getUsernameById($id){
