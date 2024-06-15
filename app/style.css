@@ -73,7 +73,7 @@ body,
 .addPostPopup {
     display: none;
     flex-flow: column nowrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 
     width: 40vw;
@@ -83,6 +83,19 @@ body,
     position: fixed;
     top: 10vh;
     left: 30vw;
+}
+
+.addPostPopup form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.addPostPopup textarea {
+    resize: none;
+    width: 30vw;
+    height: 30vh;
 }
 
 .closeButton {

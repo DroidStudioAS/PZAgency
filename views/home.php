@@ -43,6 +43,12 @@
 
     <div id="addPostPopup" class="addPostPopup">
         <p onclick="toggleAddPost(true)" class="closeButton">X</p>
+
+        <form method="post" action="../app/posts/add_post.php">
+            <input type="text" placeholder="title" name="title">
+            <textarea name="body"></textarea>
+            <input type="submit"/>
+        </form>
     </div>
     <script>
         let addPostPopup = $("#addPostPopup");

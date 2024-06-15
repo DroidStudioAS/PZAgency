@@ -52,4 +52,17 @@ class Post{
         return $results;
     }
 
+    public static function addPost($userId, $title, $body){
+        $database = new Database();
+        $conn = $database->getConnection();
+
+        $stmt = $conn->prepare("INSERT INTO posts (user_id, title, body) VALUES (?,?,?)");
+        $stmt->bind_param("iss", $userId, $title, $body);
+
+        if($stmt->execute()){
+            return true;
+        }
+        return false;
+    }
+
 }
