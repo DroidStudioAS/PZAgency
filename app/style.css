@@ -112,3 +112,8 @@ body,
 
     cursor: pointer;
 }
+
+.post {
+    padding: 30px;
+    border: 2px solid black;
+}

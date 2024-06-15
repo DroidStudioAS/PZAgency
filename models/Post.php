@@ -75,5 +75,16 @@ class Post{
 
 
     }
+    public static function getPostById($id){
+        $database = new Database();
+        $conn = $database->getConnection();
+
+        $stmt = $conn->prepare("SELECT * FROM posts WHERE id=?");
+        $stmt->bind_param('i',$id);
+        $stmt->execute();
+        $result = $stmt->get_result()->fetch_assoc();
+        return new Post($result['id'],$result['title'], $result['body'], $result['user_id']);
+
+    }
 
 }

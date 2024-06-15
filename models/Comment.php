@@ -17,5 +17,8 @@ $this->body = $body;
 public function getBody(){
     return $this->body;
 }
+public function getUserId(){
+    return $this->userId;
+}
 
 }

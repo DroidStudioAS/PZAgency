@@ -37,14 +37,10 @@
                         echo "<h3>" . $post->getTitle() . "</h3>";
                         echo "<p>" . $post->getBody() . "</p>";
                         echo $post->getUsernameById($post->getUserId());
-                        echo "<p id='viewAllComments'>View All Comments</p>";
+                        echo "<p onclick='pushToPostPage(" . $post->getId() . ")' >" . "View All Comments</p>";
+
                         echo "</div>";
-                        $comments = $post->getComments($post->getId());
-                        if($comments!==null){
-                            foreach($comments as $comment){
-                                echo $comment->getBody();
-                            }
-                        }
+                       
                     }
                 ?>
             </div>
@@ -70,7 +66,11 @@
             }
             addPostPopup.css("display","flex");
         }
+        function pushToPostPage(postId){
+            window.location.href="post.php?post_id=" +postId;
+        }
     </script>
+
 
 </body>
 </html>
