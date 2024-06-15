@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../app/style.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Homepage</title>
 </head>
 <body>
-        <div class ="homeContainer">
+    <div class ="homeContainer">
         <div class="profileContainer">
               <?php 
                 require_once "../models/User.php";
@@ -22,7 +23,7 @@
 
             </div>
             <div class="feed">
-                <button>Add a post</button>
+                <button onclick="toggleAddPost(false)">Add a post</button>
                 <?php 
                     require_once '../models/Post.php';
 
@@ -39,5 +40,21 @@
             </div>
         </div>
     </div>
+
+    <div id="addPostPopup" class="addPostPopup">
+        <p onclick="toggleAddPost(true)" class="closeButton">X</p>
+    </div>
+    <script>
+        let addPostPopup = $("#addPostPopup");
+
+        function toggleAddPost(isShowing){
+            if(isShowing){
+                addPostPopup.css("display","none");
+                return;
+            }
+            addPostPopup.css("display","flex");
+        }
+    </script>
+
 </body>
 </html>

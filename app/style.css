@@ -69,3 +69,26 @@ body,
     height: 90vh;
 
 }
+
+.addPostPopup {
+    display: none;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 40vw;
+    height: 80vh;
+    background-color: orange;
+
+    position: fixed;
+    top: 10vh;
+    left: 30vw;
+}
+
+.closeButton {
+    position: fixed;
+    top: 11vh;
+    right: 31vw;
+
+    cursor: pointer;
+}
