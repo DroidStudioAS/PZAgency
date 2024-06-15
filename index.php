@@ -12,17 +12,42 @@
 </head>
 <body>
     <div class="loginRegSwitch">
-        <div>Login</div>
-        <div>Register</div>
+        <div onclick="toggleLoginRegister(true)">Login</div>
+        <div onclick="toggleLoginRegister(false)">Register</div>
     </div>
    <div id="loginContainer" class="loginContainer">
-
+        <form action="controllers/UserController.php">
+            <input name="username" type="text" placeholder="Username">
+            <input name="password" type="password" placeholder="password">
+            <input type="submit" value="Login"/>
+        </form>
    </div>
 
    <div id="registerContainer" class="registerContainer">
-
+        <form action="app/users/register_user.php" method="post">
+             <input name="username" type="text" placeholder="Username">
+             <input name="password" type="password" placeholder="password">
+             <input name="confirmed" type="password" placeholder="Confirm password">
+             <input type="submit" value="Register"/>
+        </form>
 
    </div>
-   
+   <script>
+        let onLogin = true;
+        let loginContainer = $("#loginContainer");
+        let registerContainer = $("#registerContainer")
+
+        function toggleLoginRegister(mode){
+            onLogin=mode;
+            if(onLogin){
+                loginContainer.css("display", "flex");
+                registerContainer.css("display" , "none");
+                return;
+            }
+            loginContainer.css("display", "none");
+            registerContainer.css("display" , "flex");
+        }
+
+   </script>
 </body>
 </html>

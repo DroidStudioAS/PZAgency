@@ -5,9 +5,27 @@
     align-items: center;
 }
 
+body,
+.loginContainer,
+.loginContainer form,
+.registerContainer form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
 .loginRegSwitch div {
     margin: 2vw;
     font-size: xx-large;
     background-color: #0866ff;
     color: white;
+    padding: 30px;
+}
+
+.registerContainer {
+    display: none;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
