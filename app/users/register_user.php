@@ -22,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
        die();
     }
     //register user;
-    
+    $userController->registerUser($username, $hashedPassword);
     
 
 

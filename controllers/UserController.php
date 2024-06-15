@@ -18,9 +18,15 @@ class UserController{
         return false;
 
     }
-    public function registerUser(User $user){
+    public function registerUser($username, $password){
         $database = new Database();
         $conn = $database->getConnection();
+
+        $userRegistered = $database->registerUser($username, $password);
+        if ($userRegistered){
+            header("Location: ../../views/home.php");
+            die();
+        }
 
     }
     
@@ -29,5 +35,3 @@ class UserController{
 }
 
 
-
-?>

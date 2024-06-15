@@ -27,14 +27,13 @@ class Database{
    public function registerUser($username, $password){
 
 
-    $stmt = $this->conn->prepare("INSERT INTO Users (username, password, profile_picture)");
-    $stmt->bind_param("s",$username);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    if($result->num_rows > 0){
+    $stmt = $this->conn->prepare("INSERT INTO Users (username, password, profile_picture) VALUES (?,?,?)");
+
+    $stmt->bind_param("sss",$username, $password, $username);
+    if($stmt->execute()){
         return true;
     }
-    //success
     return false;
+ 
    }
 }
