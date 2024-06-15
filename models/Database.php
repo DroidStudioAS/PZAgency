@@ -24,9 +24,8 @@ class Database{
    public function getConnection(){
     return $this->conn;
    }
+
    public function registerUser($username, $password){
-
-
     $stmt = $this->conn->prepare("INSERT INTO Users (username, password, profile_picture) VALUES (?,?,?)");
 
     $stmt->bind_param("sss",$username, $password, $username);
@@ -35,5 +34,22 @@ class Database{
     }
     return false;
  
+   }
+   public function loginUser($username, $pass){
+        $stmt = $this->conn->prepare("SELECT username, password FROM Users WHERE username = ?");
+        $stmt->bind_param('s', $username);
+
+        $stmt->execute();
+        $result = $stmt->get_result()->fetch_assoc();
+
+        $dbPass = $result["password"];
+
+        if(!password_verify($pass, $dbPass)){
+            return false;
+        }
+
+       return true;
+        
+       
    }
 }

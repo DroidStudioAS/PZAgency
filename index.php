@@ -16,7 +16,7 @@
         <div onclick="toggleLoginRegister(false)">Register</div>
     </div>
    <div id="loginContainer" class="loginContainer">
-        <form action="controllers/UserController.php">
+        <form action="app/users/login_user.php" method="get">
             <input name="username" type="text" placeholder="Username">
             <input name="password" type="password" placeholder="password">
             <input type="submit" value="Login"/>
