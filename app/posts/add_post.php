@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $body = htmlspecialchars($_POST["body"]);
 
     if(Post::addPost($userId, $title, $body)){
-        echo "Added post";
+       header("Location: ../../views/home.php");
     }
 
 }
