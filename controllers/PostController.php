@@ -20,9 +20,11 @@ class PostController{
 
     }
     public static function getPostsByOtherUser($userId){
-       Post::getUsersPosts($userId);
+       $posts = Post::getUsersPosts($userId);
+        
+        session_start();
+        $_SESSION["posts"]= serialize($posts);
 
-       //header("Location: ../views/relevent.php");
-
+        header("location ../views/relevent.php");
     }
 }

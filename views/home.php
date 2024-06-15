@@ -86,7 +86,7 @@
             window.location.href="post.php?post_id=" +postId;
         }
         function showFriendsPosts(userId){
-            window.location.href="relevent.php?user)id=" +userId;
+            window.location.href="relevent.php?user_id=" +userId;
         }
     </script>
 

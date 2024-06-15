@@ -87,7 +87,22 @@ class Post{
 
     }
     public static function getUsersPosts($id){
-        var_dump($id);
-    }
+        $returnArray = [];
+        $database = new Database();
+        $conn = $database->getConnection();
+
+        $stmt = $conn->prepare("SELECT * FROM posts WHERE user_id=?");
+        $stmt->bind_param("i",$id);
+        $stmt->execute();
+        $res = $stmt->get_result()->fetch_all();
+
+        foreach($res as $post){
+            $post = new Post($post[0], $post[1], $post[2],$post[3]);
+            array_push($returnArray,$post);
+        }
+        return $returnArray;
+
+
+     }
 
 }
