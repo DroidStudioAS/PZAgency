@@ -48,23 +48,23 @@
             <input type="submit">
         </form>
             
-            <form method="post", action="">
-            <?php 
-            require_once "../models/User.php";
-            session_start();
-            $user = unserialize($_SESSION['user']);
+         <form method="post", action="../app/users/add_friend.php">
+         <?php 
+         require_once "../models/User.php";
+         require_once "../models/Post.php";
 
-            $friends = $user->getFriends($user->getId());
-            
-            require_once "../models/Post.php";
-            $post = Post::getPostById($_GET["post_id"]);
-            $userId = $post->getUserId();
-            if(in_array($userId, $friends)){
-                return;
-            }
-            echo "<input type='hidden' name='postId' value='" . $userId . "'>"
-            ?>
-            <input type="submit" value="Follow post author">
+         session_start();
+         $user = unserialize($_SESSION['user']);
+         $friends = $user->getFriends($user->getId());
+         
+         $post = Post::getPostById($_GET["post_id"]);
+         $userId = $post->getUserId();
+         if(in_array($userId, $friends) || $userId==$user->getId()){
+             return;
+         }
+         echo "<input type='hidden' name='userId' value='" . $userId . "'>"
+         ?>
+         <input type="submit" value="Follow post author">
         </form>
 
 
