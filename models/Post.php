@@ -1,5 +1,6 @@
 <?php
 require_once "Database.php";
+require_once 'Comment.php';
 class Post{
     private $id;
     private $title;
@@ -7,14 +8,19 @@ class Post{
 
     private $userId;
 
+    private $comments = [];
+
     public function __construct($id, $title, $body, $userId)
     {
         $this->id = $id ;    
         $this->title = $title;
         $this->body = $body;  
-        $this->userId=  $userId;
+        $this->userId= $userId;
     }
 
+    public function getId(){
+        return $this->id;    
+    }
     public function getTitle(){
         return $this->title;
     }
@@ -49,6 +55,25 @@ class Post{
             return true;
         }
         return false;
+    }
+    public static function getComments($postId){
+        $comments = [];
+        $database = new Database();
+        $conn = $database->getConnection();
+
+        $stmt = $conn->prepare("SELECT * FROM comments WHERE post_id=?");
+        $stmt->bind_param('i',$postId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+       while($row=$result->fetch_assoc()){
+            $comment = new Comment($row['id'], $row["post_id"], $row["user_id"], $row["body"]);
+            array_push($comments, $comment);
+       }
+
+        return $comments;        
+
+
     }
 
 }

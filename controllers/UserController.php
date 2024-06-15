@@ -3,6 +3,16 @@ require_once '../../models/Database.php';
 require_once '../../models/User.php';
 class UserController{
 
+    public function registerUser($username, $password){
+        $database = new Database();
+        $conn = $database->getConnection();
+
+        $userRegistered = $database->registerUser($username, $password);
+        if ($userRegistered){
+            header("Location: ../../views/home.php");
+        }
+
+    }
     public function checkIfUserAlreadyExists($username){
         $db = new Database();
         $conn=$db->getConnection();
@@ -18,16 +28,7 @@ class UserController{
         return false;
 
     }
-    public function registerUser($username, $password){
-        $database = new Database();
-        $conn = $database->getConnection();
-
-        $userRegistered = $database->registerUser($username, $password);
-        if ($userRegistered){
-            header("Location: ../../views/home.php");
-        }
-
-    }
+   
     
 
 

@@ -27,6 +27,8 @@
                 <?php 
                     require_once '../controllers/PostController.php';
                     require_once '../models/Post.php';
+                    require_once '../models/Comment.php';
+
 
                     $posts = PostController::get10LastPosts();
                    
@@ -35,7 +37,14 @@
                         echo "<h3>" . $post->getTitle() . "</h3>";
                         echo "<p>" . $post->getBody() . "</p>";
                         echo $post->getUsernameById($post->getUserId());
+                        echo "<p id='viewAllComments'>View All Comments</p>";
                         echo "</div>";
+                        $comments = $post->getComments($post->getId());
+                        if($comments!==null){
+                            foreach($comments as $comment){
+                                echo $comment->getBody();
+                            }
+                        }
                     }
                 ?>
             </div>
