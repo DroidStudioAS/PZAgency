@@ -32,6 +32,7 @@
                         echo "<div class='post'>";
                         echo "<h3>" . $post->getTitle() . "</h3>";
                         echo "<p>" . $post->getBody() . "</p>";
+                        echo $post->getUsernameById($post->getUserId());
                         echo "</div>";
                     }
                 ?>

@@ -1,4 +1,5 @@
 <?php
+require_once 'Database.php';
 class User{
     //properties
     private $id;
@@ -19,6 +20,7 @@ public function getId(){
 public function getUsername(){
     return $this->username;
 }
+
 
 
 
