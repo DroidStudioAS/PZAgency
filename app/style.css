@@ -29,3 +29,43 @@ body,
     justify-content: center;
     align-items: center;
 }
+
+/**Homepage**/
+.homeContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.profileContainer {
+    width: 100vw;
+    height: 10vh;
+    background-color: magenta;
+}
+
+.profileContainer h1 {
+    text-align: center;
+}
+
+.contentContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+}
+
+.friendsContainer {
+    flex: 1;
+    background-color: orange;
+    height: 90vh;
+
+}
+
+.feed {
+    flex: 4;
+    background-color: pink;
+    height: 90vh;
+
+}

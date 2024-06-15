@@ -1,4 +1,5 @@
 <?php
+require_once 'User.php';
 class Database{
    // Properties
    private $servername;
@@ -36,7 +37,7 @@ class Database{
  
    }
    public function loginUser($username, $pass){
-        $stmt = $this->conn->prepare("SELECT username, password FROM Users WHERE username = ?");
+        $stmt = $this->conn->prepare("SELECT id, username, password FROM Users WHERE username = ?");
         $stmt->bind_param('s', $username);
 
         $stmt->execute();
@@ -47,6 +48,11 @@ class Database{
         if(!password_verify($pass, $dbPass)){
             return false;
         }
+        
+        $user = new User( $result['id'], $username, $dbPass, strtolower($username));
+        session_start();
+        $_SESSION['user'] = serialize($user);
+
 
        return true;
         

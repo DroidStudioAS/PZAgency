@@ -1,7 +1,7 @@
 <?php
-require '../../models/Database.php';
-require '../../models/User.php';
-require '../../controllers/UserController.php';
+require_once '../../models/Database.php';
+require_once '../../models/User.php';
+require_once '../../controllers/UserController.php';
 
 
 if($_SERVER["REQUEST_METHOD"]=="GET"){
@@ -12,6 +12,7 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
     $pass = $_GET["password"];
 
     $auth = $database->loginUser($username, $pass);
+
     if($auth){
         header("Location: ../../views/home.php");
     }
