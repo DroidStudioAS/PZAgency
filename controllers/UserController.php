@@ -28,6 +28,13 @@ class UserController{
         return false;
 
     }
+    public function addToFriends($friendId){
+        session_start();
+        $user = unserialize($_SESSION['user']);
+
+        $userId = $user->getId();
+        echo $userId . $friendId;
+    }
    
     
 

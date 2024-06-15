@@ -47,6 +47,26 @@
             ?>
             <input type="submit">
         </form>
+            
+            <form method="post", action="">
+            <?php 
+            require_once "../models/User.php";
+            session_start();
+            $user = unserialize($_SESSION['user']);
+
+            $friends = $user->getFriends($user->getId());
+            
+            require_once "../models/Post.php";
+            $post = Post::getPostById($_GET["post_id"]);
+            $userId = $post->getUserId();
+            if(in_array($userId, $friends)){
+                return;
+            }
+            echo "<input type='hidden' name='postId' value='" . $userId . "'>"
+            ?>
+            <input type="submit" value="Follow post author">
+        </form>
+
 
 </body>
 </html>
