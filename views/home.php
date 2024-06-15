@@ -20,7 +20,17 @@
         </div>
         <div class="contentContainer">
             <div class="friendsContainer">
+            <?php 
+                require_once "../models/User.php";
+                $user = unserialize($_SESSION['user']);
 
+                $friends = $user->getFriends($user->getId());
+                foreach($friends as $friend){
+                    echo "<div>";
+                    echo User::getUsernameById($friend);
+                    echo "</div>";
+                }
+            ?>
             </div>
             <div class="feed">
                 <button onclick="toggleAddPost(false)">Add a post</button>
