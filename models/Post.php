@@ -86,5 +86,8 @@ class Post{
         return new Post($result['id'],$result['title'], $result['body'], $result['user_id']);
 
     }
+    public static function getUsersPosts($id){
+        var_dump($id);
+    }
 
 }

@@ -19,4 +19,10 @@ class PostController{
         return $posts;
 
     }
+    public static function getPostsByOtherUser($userId){
+       Post::getUsersPosts($userId);
+
+       //header("Location: ../views/relevent.php");
+
+    }
 }

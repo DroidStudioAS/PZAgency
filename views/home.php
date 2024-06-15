@@ -27,12 +27,15 @@
                 $friends = $user->getFriends($user->getId());
                 if(count($friends)==0){
                     echo "<p> You Dont Follow Anybody </p>";
-                }
-                foreach($friends as $friend){
-                    echo "<div>";
+                    
+                }else{
+                echo "<p>Following:</p>";
+                foreach ($friends as $friend) {
+                    echo "<div onclick='showFriendsPosts(" . $friend . ")'>";
                     echo User::getUsernameById($friend);
                     echo "</div>";
                 }
+             }
             ?>
             </div>
             <div class="feed">
@@ -81,6 +84,9 @@
         }
         function pushToPostPage(postId){
             window.location.href="post.php?post_id=" +postId;
+        }
+        function showFriendsPosts(userId){
+            window.location.href="relevent.php?user)id=" +userId;
         }
     </script>
 
