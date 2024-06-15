@@ -7,7 +7,7 @@ class User{
     private $password;
     private $picture;
 
-    private $friends = [];
+    public $friends = [];
 
 
 public function __construct($id, $username, $password, $picture){
@@ -29,8 +29,12 @@ public function getFriends($id){
     $stmt = $conn->prepare("SELECT friend_id FROM friends WHERE user_id=?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
-    $result = $stmt->get_result()->fetch_assoc();
-    return $result==null? []:$result;
+    $result = $stmt->get_result()->fetch_all();
+    foreach($result as $row){
+        array_push($this->friends, $row[0]);
+    }
+    return $this->friends;
+    //return $result==null? []:$result;
 }
 
 public static function getUsernameById($id){

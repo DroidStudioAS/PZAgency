@@ -31,8 +31,21 @@ class UserController{
     public static function addToFriends($friendId){
         session_start();
         $user = unserialize($_SESSION['user']);
-
         $userId = $user->getId();
+        //get a db instance
+        $database = new Database();
+        $conn=$database->getConnection();
+        //prepare statement
+        $stmt=$conn->prepare("INSERT INTO friends (user_id, friend_id) VALUES(?,?)");
+        $stmt->bind_param("ii",$userId,$friendId);
+        //execute statement and http differ
+        $inserted = $stmt->execute();
+        if(!$inserted){
+            //add message to session for error
+        }
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        
+
         
     }
    
