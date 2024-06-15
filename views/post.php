@@ -40,7 +40,7 @@
 
         echo "</div>";
     ?>
-        <form>
+        <form method="post", action="../app/comments/add_comment.php">
             <input type="text" placeholder="Leave a comment" name="body">
             <?php 
                 echo "<input type='hidden' name='postId' value='" .  $_GET["post_id"] . "'>";
