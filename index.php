@@ -11,6 +11,7 @@
     <title>BlogBook</title>
 </head>
 <body>
+
     <div class="loginRegSwitch">
         <div onclick="toggleLoginRegister(true)">Login</div>
         <div onclick="toggleLoginRegister(false)">Register</div>

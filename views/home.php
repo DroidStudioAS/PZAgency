@@ -25,9 +25,10 @@
             <div class="feed">
                 <button onclick="toggleAddPost(false)">Add a post</button>
                 <?php 
+                    require_once '../controllers/PostController.php';
                     require_once '../models/Post.php';
 
-                    $posts = Post::get10LastPosts();
+                    $posts = PostController::get10LastPosts();
                    
                     foreach($posts as $post){
                         echo "<div class='post'>";

@@ -36,10 +36,15 @@ body,
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .profileContainer {
-    width: 100vw;
+    width: 90vw;
     height: 10vh;
     background-color: magenta;
 }
@@ -53,7 +58,9 @@ body,
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
-    width: 100vw;
+
+    width: 90vw;
+
 }
 
 .friendsContainer {

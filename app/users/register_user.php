@@ -1,7 +1,7 @@
 <?php
-require '../../models/Database.php';
-require '../../models/User.php';
-require '../../controllers/UserController.php';
+require_once '../../models/Database.php';
+require_once '../../models/User.php';
+require_once '../../controllers/UserController.php';
 
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){

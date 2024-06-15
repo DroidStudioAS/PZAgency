@@ -25,7 +25,6 @@ class UserController{
         $userRegistered = $database->registerUser($username, $password);
         if ($userRegistered){
             header("Location: ../../views/home.php");
-            die();
         }
 
     }
