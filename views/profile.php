@@ -20,7 +20,7 @@
         require_once "../controllers/PostController.php";
         $posts = Post::getUsersPosts($user->getId());
         if(count($posts)==0){
-            echo "<h1 class='header'>Your BloogBook Is Empty</h1>";
+            echo "<h1 class='header'>Your BlogBook Is Empty</h1>";
         }else{
             echo "<h1 class='header'>Your BlogBook </h1>";
         }
