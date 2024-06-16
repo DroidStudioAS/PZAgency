@@ -34,9 +34,16 @@
                 echo  "<p>" ."\"  " . $post->getBody() ."  \"". "</p>";
                 echo "<p>By: <span class='postAuthor'>" .  $post->getUsernameById($post->getUserId()) . "</span></p>";
                 echo "<p class='expandPostTrigger' onclick='pushToPostPage(" . $post->getId() . ")' >" . "Expand Post</p>";
+                echo "<div class=hoverContainer>";
                 echo "<div onclick=callDelete(" 
                 . $post->getId() . ")" 
-                ." class='hoverContainer'> Delete Post </div>" ;
+                ." class='deleteButton'>
+                 Delete Post </div>" ;
+                echo "<div onclick=callDelete(" 
+                . $post->getId() . ")" 
+                ." class='editButton'>
+                 Edit Post </div>";
+                 echo "</div>";
                 echo "</div>";
             }
         }
