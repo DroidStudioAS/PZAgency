@@ -15,6 +15,8 @@
 </head>
 <body class="postsContainer">
    <?php
+        include "reusable/navigation.php";
+
         require_once "../controllers/PostController.php";
         $posts = Post::getUsersPosts($user->getId());
         if(count($posts)==0){

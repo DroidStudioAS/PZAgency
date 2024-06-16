@@ -9,8 +9,10 @@
 <body class="authContainer">
     <h1 class="header">
         <?php
+            include "reusable/navigation.php";
+
              require_once "../models/User.php";
-             echo "Posts by: " .  User::getUsernameById($_GET['user_id']);
+             echo "<h1 class='header'> Posts by: " .  User::getUsernameById($_GET['user_id']) . "</h1>";
 
         ?>
     </h1>
