@@ -89,14 +89,26 @@
         <h2>Add A Post</h2>
         <p onclick="toggleAddPost(true)" class="closeButton">X</p>
 
-        <form method="post" action="../app/posts/add_post.php">
-            <input class="titleInput" type="text" placeholder="title" name="title">
-            <textarea name="body"></textarea>
+        <form id="addPostForm" method="post" action="../app/posts/add_post.php">
+            <input id="title" class="titleInput" type="text" placeholder="title" name="title">
+            <textarea id="body" name="body"></textarea>
             <input class="addPostTrigger" type="submit"/>
         </form>
     </div>
     <script>
+        $(document).ready(function(){
+            $("#addPostForm").on("submit", function(e){
+                if($("#title").val().trim()==="" || $("#body").val.trim()===""){
+                    event.preventDefault();
+                    alert("You Can Not Post An Empty Post");
+                    return;
+                }
+            })
+        })
+
         let addPostPopup = $("#addPostPopup");
+
+
 
         function toggleAddPost(isShowing){
             if(isShowing){
