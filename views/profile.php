@@ -14,9 +14,12 @@
         ?>
     </title>
 </head>
-<body class="postsContainer">
-   <?php
-        include "reusable/navigation.php";
+<body>
+    <?php
+    include "reusable/navigation.php";
+    ?>
+    <div class="postsContainer">
+    <?php
         require_once "../controllers/PostController.php";
         $posts = Post::getUsersPosts($user->getId());
         if (count($posts) == 0) {
@@ -40,7 +43,15 @@
                 echo "</div>"; // close post
             }
         }
+        if(isset($_SESSION["error"])){
+            echo "<div class='error-message'>" ;
+            echo $_SESSION["error"];
+            echo "</div>";
+
+            unset($_SESSION["error"]);
+        }
     ?>
+
     <div class="editPostPopup">
         <div onclick="hideEditPopup()" class="closeButton">X</div>
         <form action="../app/posts/edit_post.php" method="POST">
@@ -50,6 +61,8 @@
             <input class="editPostTrigger" type="submit">
         </form>
     </div>
+    </div>
+
     <script>
         let postInFocus = -1;
 

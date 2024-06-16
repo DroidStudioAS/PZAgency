@@ -65,6 +65,17 @@ body,
 .authContainer,
 .postsContainer {
     background-color: #f0f2f5;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.authContainer{
+    top: 0;
 }
 
 
