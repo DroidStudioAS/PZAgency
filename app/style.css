@@ -8,23 +8,70 @@
 body,
 .loginContainer,
 .loginContainer form,
+.registerContainer,
 .registerContainer form {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
-.authContainer{
+
+.loginContainer,
+.registerContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+    background-color: #ffffff;
+    height: 420px;
+    border-radius: 20px;
+    box-shadow:
+        5px 0 5px rgba(0, 0, 0, 0.5),
+        -5px 0 5px rgba(0, 0, 0, 0.5),
+        0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.loginContainer h3,
+.registerContainer h3 {
+    color: #0866ff;
+    font-family: "Rubik", sans-serif;
+    font-size: x-large;
+}
+.authInput{
+    width: 300px;
+    height: 50px;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 2px solid #1877f2;
+    color: #0866ff;
+    font-size: x-large;
+}
+.authSubmit{
+    width: 300px;
+    height: 50px;
+    background-color: #0866ff;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 10px;
+    font-size: x-large;
+    color: #fff;
+
+}
+
+.authContainer {
     background-color: #f0f2f5;
 }
-.header{
+
+.header {
     font-family: "Rubik", sans-serif;
     color: #1877f2;
     font-size: xx-large;
     font-weight: 700;
 }
 
-.loginRegSwitch{
+.loginRegSwitch {
     margin: 30px;
     font-family: "Rubik", sans-serif;
     display: flex;
@@ -40,13 +87,15 @@ body,
     background-color: #0866ff;
 
 }
-.loginTrigger{
+
+.loginTrigger {
     border-right: 2px solid #f0f2f5;
     width: 120px;
-    border-top-left-radius:12px;
+    border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
 }
-.registerTrigger{
+
+.registerTrigger {
     border-left: 2px solid #f0f2f5;
     width: 120px;
     border-bottom-right-radius: 12px;
@@ -173,7 +222,8 @@ body,
     align-items: center;
 
 }
-.expandPostTrigger{
+
+.expandPostTrigger {
     font-size: large;
     font-weight: 600;
     text-decoration: underline;
@@ -229,7 +279,8 @@ body,
     height: 30vh;
     text-align: start;
 }
-.addPostTrigger{
+
+.addPostTrigger {
     width: 80%;
     height: 20%;
     background-color: #0866ff;

@@ -17,19 +17,21 @@
         <div class="registerTrigger" onclick="toggleLoginRegister(false)">Register</div>
     </div>
    <div id="loginContainer" class="loginContainer">
+        <h3>Log into BlogBook</h3>
         <form action="app/users/login_user.php" method="get">
-            <input name="username" type="text" placeholder="Username">
-            <input name="password" type="password" placeholder="password">
-            <input type="submit" value="Login"/>
+            <input class="authInput" name="username" type="text" placeholder="Username">
+            <input class="authInput" name="password" type="password" placeholder="password">
+            <input class="authSubmit" type="submit" value="Login"/>
         </form>
    </div>
 
    <div id="registerContainer" class="registerContainer">
+        <h3>Register For BlogBook</h3>
         <form action="app/users/register_user.php" method="post">
-             <input name="username" type="text" placeholder="Username">
-             <input name="password" type="password" placeholder="password">
-             <input name="confirmed" type="password" placeholder="Confirm password">
-             <input type="submit" value="Register"/>
+             <input class="authInput" name="username" type="text" placeholder="Username">
+             <input class="authInput" name="password" type="password" placeholder="password">
+             <input class="authInput" name="confirmed" type="password" placeholder="Confirm password">
+             <input class="authSubmit" type="submit" value="Register"/>
         </form>
 
    </div>
