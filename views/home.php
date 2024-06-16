@@ -54,7 +54,6 @@
                 </div>
               
               <div class="feed">
-                
                 <?php 
                     require_once '../controllers/PostController.php';
                     require_once '../models/Post.php';
@@ -65,9 +64,9 @@
                    
                     foreach($posts as $post){
                         echo "<div class='post'>";
-                        echo "<h3>" . $post->getTitle() . "</h3>";
-                        echo "<p>" . $post->getBody() . "</p>";
-                        echo $post->getUsernameById($post->getUserId());
+                        echo "<h3 class='postTitle'>" . $post->getTitle() . "</h3>";
+                        echo  "<p>" ."\"  " . $post->getBody() ."  \"". "</p>";
+                        echo "<p>By: <span class='postAuthor'>" .  $post->getUsernameById($post->getUserId()) . "</span></p>";
                         echo "<p onclick='pushToPostPage(" . $post->getId() . ")' >" . "View All Comments</p>";
 
                         echo "</div>";

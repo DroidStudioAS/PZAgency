@@ -132,9 +132,13 @@ body,
 }
 
 .feed {
-    background-color: pink;
     height: 90vh;
     overflow-y: scroll;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
 
 }
 
@@ -175,8 +179,29 @@ body,
 }
 
 .post {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
     padding: 30px;
-    border: 2px solid black;
+    width: 50vw;
+    margin: 20px;
+
+    background-color: #0866ff;
+    color: white;
+    border-radius: 18px;
+}
+
+.postTitle {
+    font-size: xx-large;
+    font-family: "Rubik", sans-serif;
+    text-decoration: underline;
+
+}
+.postAuthor{
+    font-weight: 800;
+    font-size: x-large;
+    text-decoration: underline;
 }
 
 
