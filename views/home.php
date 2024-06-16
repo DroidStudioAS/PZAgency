@@ -67,7 +67,7 @@
                         echo "<h3 class='postTitle'>" . $post->getTitle() . "</h3>";
                         echo  "<p>" ."\"  " . $post->getBody() ."  \"". "</p>";
                         echo "<p>By: <span class='postAuthor'>" .  $post->getUsernameById($post->getUserId()) . "</span></p>";
-                        echo "<p onclick='pushToPostPage(" . $post->getId() . ")' >" . "View All Comments</p>";
+                        echo "<p class='expandPostTrigger' onclick='pushToPostPage(" . $post->getId() . ")' >" . "View All Comments</p>";
 
                         echo "</div>";
                        
@@ -81,12 +81,13 @@
     </div>
 
     <div id="addPostPopup" class="addPostPopup">
+        <h2>Add A Post</h2>
         <p onclick="toggleAddPost(true)" class="closeButton">X</p>
 
         <form method="post" action="../app/posts/add_post.php">
-            <input type="text" placeholder="title" name="title">
+            <input class="titleInput" type="text" placeholder="title" name="title">
             <textarea name="body"></textarea>
-            <input type="submit"/>
+            <input class="addPostTrigger" type="submit"/>
         </form>
     </div>
     <script>

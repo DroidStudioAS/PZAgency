@@ -70,6 +70,7 @@ body,
     align-items: center;
 
     overflow-y: scroll;
+    height: 90vh;
 
 }
 
@@ -145,16 +146,19 @@ body,
 .addPostPopup {
     display: none;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 
     width: 40vw;
     height: 80vh;
-    background-color: orange;
+    background-color: #0866ff;
 
     position: fixed;
     top: 10vh;
     left: 30vw;
+    color: white;
+    font-family: "Rubik", sans-serif;
+    border-radius: 20px;
 }
 
 .addPostPopup form {
@@ -164,10 +168,40 @@ body,
     align-items: center;
 }
 
+.titleInput,
+.addPostPopup textarea {
+    padding: 15px;
+    text-align: center;
+    margin: 10px;
+    background-color: #1877f2;
+    color: white;
+    border-bottom: 2px solid #f0f2f5;
+    border-right: 2px solid #f0f2f5;
+    font-size: x-large;
+    border-radius: 12px;
+}
+
+.titleInput::placeholder {
+    color: white;
+}
+
 .addPostPopup textarea {
     resize: none;
     width: 30vw;
     height: 30vh;
+    text-align: start;
+}
+.addPostTrigger{
+    width: 80%;
+    height: 20%;
+    background-color: #0866ff;
+    border-radius: 8px;
+    border: 2px solid #f0f2f5;
+
+    color: white;
+    font-size: xx-large;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 .closeButton {
@@ -176,6 +210,7 @@ body,
     right: 31vw;
 
     cursor: pointer;
+    font-size: xx-large;
 }
 
 .post {
@@ -198,7 +233,8 @@ body,
     text-decoration: underline;
 
 }
-.postAuthor{
+
+.postAuthor {
     font-weight: 800;
     font-size: x-large;
     text-decoration: underline;
