@@ -11,7 +11,7 @@
         <div class="ultimateHeader">BlogBook</div>
         <div onclick="pushTo('profile.php')" class="header">My Posts</div>
     </nav>
-
+    
     <script>
         function pushTo(where){
             window.location.href=where

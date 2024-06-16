@@ -2,6 +2,9 @@
 require_once '../../models/Database.php';
 require_once '../../models/User.php';
 require_once '../../controllers/UserController.php';
+require_once '../../controllers/AuthController.php';
+
+
 
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
@@ -16,13 +19,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     }
     //check if there is a user with same username
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $usernameTaken = $userController->checkIfUserAlreadyExists($username);
+    $usernameTaken = AuthController::checkIfUserAlreadyExists($username);
     if($usernameTaken){
         //return user back with message
        die();
     }
     //register user;
-    $logUser = $userController->registerUser($username, $hashedPassword,$password);
+    $logUser = AuthController::registerUser($username, $hashedPassword,$password);
     if($logUser){
         header("Location: ../../views/home.php");
     }
