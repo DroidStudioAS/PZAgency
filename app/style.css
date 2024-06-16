@@ -14,13 +14,44 @@ body,
     justify-content: center;
     align-items: center;
 }
+.authContainer{
+    background-color: #f0f2f5;
+}
+.header{
+    font-family: "Rubik", sans-serif;
+    color: #1877f2;
+    font-size: xx-large;
+    font-weight: 700;
+}
+
+.loginRegSwitch{
+    margin: 30px;
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
 
 .loginRegSwitch div {
-    margin: 2vw;
     font-size: xx-large;
-    background-color: #0866ff;
     color: white;
     padding: 30px;
+    cursor: pointer;
+    background-color: #0866ff;
+
+}
+.loginTrigger{
+    border-right: 2px solid #f0f2f5;
+    width: 120px;
+    border-top-left-radius:12px;
+    border-bottom-left-radius: 12px;
+}
+.registerTrigger{
+    border-left: 2px solid #f0f2f5;
+    width: 120px;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+    opacity: 0.5;
 }
 
 .registerContainer {

@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="app/style.css"/>
     <title>BlogBook</title>
 </head>
-<body>
-
+<body class="authContainer">
+<h1 class="header">BlogBook</h1>
     <div class="loginRegSwitch">
-        <div onclick="toggleLoginRegister(true)">Login</div>
-        <div onclick="toggleLoginRegister(false)">Register</div>
+        <div class="loginTrigger" onclick="toggleLoginRegister(true)">Login</div>
+        <div class="registerTrigger" onclick="toggleLoginRegister(false)">Register</div>
     </div>
    <div id="loginContainer" class="loginContainer">
         <form action="app/users/login_user.php" method="get">
@@ -36,17 +36,23 @@
    <script>
         let onLogin = true;
         let loginContainer = $("#loginContainer");
-        let registerContainer = $("#registerContainer")
+        let registerContainer = $("#registerContainer");
+        let loginTrigger = $(".loginTrigger");
+        let registerTrigger = $(".registerTrigger");
 
         function toggleLoginRegister(mode){
             onLogin=mode;
             if(onLogin){
                 loginContainer.css("display", "flex");
                 registerContainer.css("display" , "none");
+                loginTrigger.css('opacity',1);
+                registerTrigger.css('opacity',0.5);
                 return;
             }
             loginContainer.css("display", "none");
             registerContainer.css("display" , "flex");
+            loginTrigger.css('opacity',0.5);
+            registerTrigger.css('opacity',1);
         }
 
    </script>
