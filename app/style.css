@@ -41,16 +41,10 @@ body,
     top: 0;
     left: 0;
     right: 0;
+    padding: 0;
 }
 
-.profileContainer {
-    width: 90vw;
-    height: 10vh;
-    background-color: magenta;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .profileContainer h1 {
     text-align: center;
@@ -128,8 +122,16 @@ body,
     justify-content: center;
     align-items: center;
     perspective: 1000px;
-    margin: 20px;
-    /* Adjust as needed */
+    height: 100px;
+
+    background-color: #1877f2;
+
+    padding: 10px;
+    margin: 10px;
+
+    border-radius: 8px 5px 8px 5px;
+    color: white;
+
 }
 
 .welcomeCard {
@@ -139,6 +141,7 @@ body,
     transform-style: preserve-3d;
     position: relative;
     cursor: pointer;
+    font-family: "Rubik", sans-serif;
 }
 
 .card-front,
@@ -156,17 +159,10 @@ body,
 
 .card-back {
     transform: rotateY(180deg);
-    background-color: #f8f8f8;
 }
 
-.card-front {
-    background-color: #eaeaea;
-}
+
 
 .welcomeCard.flipped {
     transform: rotateY(180deg);
-}
-
-.myPosts {
-    background-color: pink;
 }
