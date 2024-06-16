@@ -1,5 +1,6 @@
 <?php
 
+require_once "../models/Database.php";
 require_once "../models/User.php";
 require_once "../models/Post.php";
 
@@ -26,5 +27,17 @@ class PostController{
         $_SESSION["posts"] = serialize($posts);
 
         header("location ../views/relevent.php");
+    }
+    public static function deletePost($postId){
+        $db= new Database();
+        $conn = $db->getConnection();
+
+        $stmt = $conn->prepare("DELETE FROM posts WHERE post_id=?");
+        $stmt->bind_param("i",$postId);
+        if(!$stmt->execute()){
+            return false;
+        }
+
+        return true;
     }
 }

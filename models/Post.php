@@ -104,5 +104,17 @@ class Post{
 
 
      }
+     public static function deletePost($postId){
+        $db= new Database();
+        $conn = $db->getConnection();
+
+        $stmt = $conn->prepare("DELETE FROM posts WHERE id=?");
+        $stmt->bind_param("i",$postId);
+        if(!$stmt->execute()){
+            return false;
+        }
+
+        return true;
+    }
 
 }
