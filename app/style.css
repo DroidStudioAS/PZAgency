@@ -254,7 +254,8 @@ body,
     border-radius: 20px;
 }
 
-.addPostPopup form {
+.addPostPopup form,
+.editPostPopup form {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
@@ -262,7 +263,8 @@ body,
 }
 
 .titleInput,
-.addPostPopup textarea {
+.addPostPopup textarea,
+.editPostPopup textarea {
     padding: 15px;
     text-align: center;
     margin: 10px;
@@ -278,7 +280,8 @@ body,
     color: white;
 }
 
-.addPostPopup textarea {
+.addPostPopup textarea,
+.editPostPopup textarea {
     resize: none;
     width: 30vw;
     height: 30vh;
@@ -300,7 +303,8 @@ body,
     padding: 20px;
 }
 
-.addPostTrigger {
+.addPostTrigger,
+.editPostTrigger {
     width: 80%;
     height: 20%;
     background-color: #0866ff;

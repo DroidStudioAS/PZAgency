@@ -39,10 +39,15 @@
                 . $post->getId() . ")" 
                 ." class='deleteButton'>
                  Delete Post </div>" ;
-                 echo "<div onclick=callUpdate(" 
-                 . $post->getId() . ")" 
-                 ." class='editButton'>
-                  Edit Post </div>" ;
+                 echo "<div onclick=\"callUpdate(" 
+                . $post->getId() 
+                . ", '" 
+                . htmlspecialchars($post->getTitle(), ENT_QUOTES) 
+                . "', '"
+                . htmlspecialchars($post->getBody(), ENT_QUOTES)
+                . "')\" 
+                class='editButton'>
+                Edit Post </div>";
                  echo "</div>";
                 echo "</div>";
             }
@@ -51,7 +56,11 @@
     ?>
     <div class="editPostPopup">
         <div onclick="hideEditPopup()" class="closeButton">X</div>
-        <form action=""></form>
+        <form action="../app/posts/edit_post.php" method="POST">
+            <input id="editTitleInput" class="titleInput" type="text" name="" id="">
+            <textArea id="editPostInput"></textArea>
+            <input class="editPostTrigger" type="submit"/>
+        </form>
     </div>
     <script>
         let postInFocus = -1;
@@ -77,10 +86,15 @@
                 }
             });
         }
-            function callUpdate(postId){
+            function callUpdate(postId , postTitle, postBody){
                 $(".editPostPopup").css("display", "flex");
                 postInFocus=postId;
                 console.log(postInFocus);
+                console.log(postTitle);
+                console.log(postBody);
+
+                $("#editTitleInput").val(postTitle);
+                $("#editPostInput").val(postTitle);
 
 
             
