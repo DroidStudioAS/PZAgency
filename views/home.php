@@ -23,7 +23,7 @@
                     <?php echo  "<h1> Welcome " . $user->getUsername() . "</h1>"; ?>
                 </div>
                     <div class="card-back">
-                       <p onclick="pushToProfilePage()" id="myPostsTrigger" class="myPosts">View Your Profile</p>
+                       <p onclick="pushToProfilePage()" id="myPostsTrigger" class="myPosts">View Your Posts</p>
                     </div>
                 </div>          
         </div>

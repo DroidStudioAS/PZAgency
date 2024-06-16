@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../app/style.css"/>
     <title>
         <?php
              require_once "../models/User.php";
@@ -13,22 +14,27 @@
     </title>
 </head>
 <body>
-    <?php 
+   <?php
         require_once "../controllers/PostController.php";
         $posts = Post::getUsersPosts($user->getId());
         if(count($posts)==0){
-            echo "<div> You Have No Posts </div>";
+            echo "<h1 class='header'>Your BloogBook Is Empty</h1>";
         }else{
+            echo "<h1 class='header'>Your BlogBook </h1>";
+        }
+   ?>
+    <?php 
+        if(count($posts)!==0){
             foreach($posts as $post){
                 echo "<div class='post'>";
-                echo "<h3>" . $post->getTitle() . "</h3>";
-                echo "<p>" . $post->getBody() . "</p>";
-                echo $post->getUsernameById($post->getUserId());
-                echo "<p onclick='pushToPostPage(" . $post->getId() . ")' >" . "View All Comments</p>";
-
+                echo "<h3 class='postTitle'>" . $post->getTitle() . "</h3>";
+                echo  "<p>" ."\"  " . $post->getBody() ."  \"". "</p>";
+                echo "<p>By: <span class='postAuthor'>" .  $post->getUsernameById($post->getUserId()) . "</span></p>";
+                echo "<p class='expandPostTrigger' onclick='pushToPostPage(" . $post->getId() . ")' >" . "View All Comments</p>";
                 echo "</div>";
             }
         }
+        
     ?>
     <script>
         function pushToPostPage(postId){
