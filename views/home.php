@@ -12,11 +12,20 @@
         <div class="profileContainer">
               <?php 
                 require_once "../models/User.php";
-
                 session_start();
                 $user = unserialize($_SESSION['user']);
-                echo  "<h1> Welcome " . $user->getUsername() . "</h1>";
-             ?>  
+                ?>
+                <div id="welcomeCard" class="welcomeCard" onclick="addFlipCardEffect()">
+                <div class="card-front">
+                    <?php echo  "<h1> Welcome " . $user->getUsername() . "</h1>"; ?>
+                </div>
+                    <div class="card-back">
+                       <p onclick="pushToProfilePage()" id="myPostsTrigger" class="myPosts">View Your Posts</p>
+                    </div>
+                </div>
+              
+               
+          
         </div>
         <div class="contentContainer">
             <div class="friendsContainer">
@@ -88,6 +97,14 @@
         function showFriendsPosts(userId){
             window.location.href="relevent.php?user_id=" +userId;
         }
+        function pushToProfilePage(){
+            window.location.href="profile.php";
+        }
+        $(document).ready(function() {
+          $('.welcomeCard').on('click', function() {
+            $(this).toggleClass('flipped');
+          });
+        });
     </script>
 
 

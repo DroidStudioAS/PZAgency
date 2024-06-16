@@ -23,7 +23,7 @@ class PostController{
        $posts = Post::getUsersPosts($userId);
         
         session_start();
-        $_SESSION["posts"]= serialize($posts);
+        $_SESSION["posts"] = serialize($posts);
 
         header("location ../views/relevent.php");
     }
