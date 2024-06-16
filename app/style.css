@@ -284,6 +284,20 @@ body,
     text-align: start;
 }
 
+.followTrigger{
+    width: 100%;
+    height: 20%;
+    background-color: #0866ff;
+    border-radius: 8px;
+    border: 2px solid #f0f2f5;
+
+    color: white;
+    font-size: xx-large;
+    font-weight: 700;
+    cursor: pointer;
+
+    padding: 20px;
+}
 .addPostTrigger {
     width: 80%;
     height: 20%;
@@ -413,4 +427,10 @@ body,
     border-top-right-radius:40px ;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 40px;
+}
+.inputSubmit{
+    border-radius: 50%;
+    padding: 10px;
+    background-color: #fff;
+    font-size: x-large;
 }
