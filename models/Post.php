@@ -116,5 +116,16 @@ class Post{
 
         return true;
     }
+    public static function editPost($postId, $title, $body){
+        $db= new Database();
+        $conn = $db->getConnection();
+
+        $stmt = $conn->prepare("UPDATE posts SET title=?, body=? WHERE id=?");
+        $stmt->bind_param("ssi", $title,$body, $postId);
+        if(!$stmt->execute()){
+            return false;
+        }
+        return true;
+    }
 
 }
