@@ -58,6 +58,11 @@
 
 
         <?php
+        if(isset($_SESSION['error'])){
+            echo "<div class='error-message'>";
+            echo $_SESSION["error"];
+            echo "</div>";
+        }
         echo "<p class='header'>";
         echo "Comments";
         echo "</p>";

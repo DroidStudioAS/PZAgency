@@ -22,6 +22,7 @@ class CommentController{
         $stmt = $conn->prepare("INSERT INTO comments (user_id, post_id, body) VALUES (?,?,?)");
         $stmt->bind_param("iis", $userId, $postId, $body);
         if($stmt->execute()){
+            unset($_SESSION["error"]);
             header('Location: ' . $_SERVER['HTTP_REFERER']);
         }
 
