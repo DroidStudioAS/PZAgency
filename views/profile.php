@@ -39,17 +39,22 @@
                 . $post->getId() . ")" 
                 ." class='deleteButton'>
                  Delete Post </div>" ;
-                echo "<div onclick=callDelete(" 
-                . $post->getId() . ")" 
-                ." class='editButton'>
-                 Edit Post </div>";
+                 echo "<div onclick=callUpdate(" 
+                 . $post->getId() . ")" 
+                 ." class='editButton'>
+                  Edit Post </div>" ;
                  echo "</div>";
                 echo "</div>";
             }
         }
         
     ?>
+    <div class="editPostPopup">
+        <div onclick="hideEditPopup()" class="closeButton">X</div>
+        <form action=""></form>
+    </div>
     <script>
+        let postInFocus = -1;
         function pushToPostPage(postId){
             window.location.href="post.php?post_id=" +postId;
         }
@@ -72,6 +77,19 @@
                 }
             });
         }
+            function callUpdate(postId){
+                $(".editPostPopup").css("display", "flex");
+                postInFocus=postId;
+                console.log(postInFocus);
+
+
+            
+
+            }
+            function hideEditPopup(){
+                $(".editPostPopup").css("display", "none");
+            }
+        
     </script>
 </body>
 </html>

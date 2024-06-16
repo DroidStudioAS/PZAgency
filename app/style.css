@@ -235,7 +235,8 @@ body,
     cursor: pointer;
 }
 
-.addPostPopup {
+.addPostPopup,
+.editPostPopup {
     display: none;
     flex-flow: column nowrap;
     justify-content: space-around;
@@ -500,20 +501,23 @@ body,
     border-radius: 15px;
 
     opacity: 0;
-    transition: opacity 0.3s ease; 
+    transition: opacity 0.3s ease;
 
 }
-.post:hover .hoverContainer{
+
+.post:hover .hoverContainer {
     opacity: 1;
 }
-.deleteButton,.editButton{
+
+.deleteButton,
+.editButton {
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 1;
-    
+
     width: 100%;
-    
+
 
 }
 
@@ -522,9 +526,14 @@ body,
     border-bottom: 2px solid #0866ff;
     color: red;
 }
-.editButton{
+
+.editButton {
     border-top: 2px solid #0866ff;
     color: green;
 
 
+}
+
+.editPostPopup {
+    z-index: 10;
 }
