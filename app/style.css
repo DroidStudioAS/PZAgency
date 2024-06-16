@@ -142,6 +142,13 @@ body,
     align-items: center;
 
 }
+.expandPostTrigger{
+    font-size: large;
+    font-weight: 600;
+    text-decoration: underline;
+    font-family: "Rubik", sans-serif;
+    cursor: pointer;
+}
 
 .addPostPopup {
     display: none;

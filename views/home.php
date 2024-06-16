@@ -67,7 +67,7 @@
                         echo "<h3 class='postTitle'>" . $post->getTitle() . "</h3>";
                         echo  "<p>" ."\"  " . $post->getBody() ."  \"". "</p>";
                         echo "<p>By: <span class='postAuthor'>" .  $post->getUsernameById($post->getUserId()) . "</span></p>";
-                        echo "<p class='expandPostTrigger' onclick='pushToPostPage(" . $post->getId() . ")' >" . "View All Comments</p>";
+                        echo "<p class='expandPostTrigger' onclick='pushToPostPage(" . $post->getId() . ")' >" . "Expand Post</p>";
 
                         echo "</div>";
                        
