@@ -10,10 +10,19 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
     $pass = $_GET["password"];
 
     $auth = AuthController::loginUser($username, $pass);
-
-    if($auth){
-        header("Location: ../../views/home.php");
+    //authentication error
+    if(!$auth){
+        session_start();
+        $_SESSION["error"]="Wrong Credentials";
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        return;
     }
+    //all good
+    unset($_SESSION['error']);
+    header("Location: ../../views/home.php");
+
+    
+
     
 
 

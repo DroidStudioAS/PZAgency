@@ -455,3 +455,16 @@ body,
     margin-right: 150px;
     cursor:default;
 }
+
+.error-message{
+    width: 80%;
+    height: 20%;
+    background-color: #ffebe8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #dd3c10;
+    padding: 10px;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+}

@@ -19,6 +19,14 @@
    <div id="loginContainer" class="loginContainer">
         <h3>Log into BlogBook</h3>
         <form action="app/users/login_user.php" method="get">
+            <?php
+                session_start();
+                if(isset($_SESSION['error'])){
+                    echo "<div class='error-message'>";
+                    echo $_SESSION['error'];
+                    echo "</div>";
+                }
+            ?>
             <input class="authInput" name="username" type="text" placeholder="Username">
             <input class="authInput" name="password" type="password" placeholder="password">
             <input class="authSubmit" type="submit" value="Login"/>
