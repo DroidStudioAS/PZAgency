@@ -35,12 +35,12 @@
 
                 $friends = $user->getFriends($user->getId());
                 if(count($friends)==0){
-                    echo "<p> You Dont Follow Anybody </p>";
+                    echo "<p class='followingLabel'> You Dont Follow Anybody </p>";
                     
                 }else{
-                echo "<p>Following:</p>";
+                echo "<p class='followingLabel'>Following:</p>";
                 foreach ($friends as $friend) {
-                    echo "<div onclick='showFriendsPosts(" . $friend . ")'>";
+                    echo "<div class='friend' onclick='showFriendsPosts(" . $friend . ")'>";
                     echo User::getUsernameById($friend);
                     echo "</div>";
                 }

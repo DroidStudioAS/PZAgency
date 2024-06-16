@@ -42,6 +42,7 @@ body,
     left: 0;
     right: 0;
     padding: 0;
+    background-color: #f0f2f5;
 }
 
 
@@ -62,9 +63,39 @@ body,
 
 .friendsContainer {
     flex: 1;
-    background-color: orange;
-    height: 90vh;
 
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    overflow-y: scroll;
+
+}
+
+.followingLabel {
+    font-family: "Rubik", sans-serif;
+    font-size: xx-large;
+}
+
+.friend {
+    width: 10vw;
+    height: 15vh;
+
+    background-color: #0866ff;
+    margin: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    color: white;
+    font-size: large;
+    font-weight: 700;
+    font-family: "Rubik", sans-serif;
+
+    border-radius: 12px;
 }
 
 .feed {
