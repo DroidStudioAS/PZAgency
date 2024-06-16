@@ -98,10 +98,43 @@ body,
     border-radius: 12px;
 }
 
-.feed {
+.feedContainer {
     flex: 4;
+
+}
+
+.feedHeader {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.feedHeader h2 {
+    font-weight: 700;
+    font-family: "Rubik", sans-serif;
+    margin-right: 50px;
+    background-color: #0866ff;
+    padding: 40px;
+    color: white;
+    border-radius: 12px;
+}
+
+.feedHeader button {
+    position: absolute;
+    right: 10vw;
+    padding: 16px;
+    border-radius: 8px 12px 8px 12px;
+    background-color: #0866ff;
+    color: white;
+    font-size: large;
+    font-weight: 600;
+}
+
+.feed {
     background-color: pink;
     height: 90vh;
+    overflow-y: scroll;
 
 }
 

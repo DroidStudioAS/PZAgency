@@ -47,8 +47,14 @@
              }
             ?>
             </div>
-            <div class="feed">
-                <button onclick="toggleAddPost(false)">Add a post</button>
+            <div class="feedContainer">
+                <div class="feedHeader">
+                    <h2>Browse Posts</h2>
+                    <button onclick="toggleAddPost(false)">Add a post</button>
+                </div>
+              
+              <div class="feed">
+                
                 <?php 
                     require_once '../controllers/PostController.php';
                     require_once '../models/Post.php';
@@ -69,6 +75,9 @@
                     }
                 ?>
             </div>
+            </div>
+
+   
         </div>
     </div>
 
