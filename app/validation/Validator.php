@@ -9,4 +9,7 @@ public static function validatePasswordUsernameLength($username, $password){
     }
     return true;
 }
+public static function validateCommentBody($body){
+    return strlen($body)>0 && strlen($body)<500;
+}
 }
