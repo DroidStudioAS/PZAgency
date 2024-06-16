@@ -36,6 +36,13 @@
    <div id="registerContainer" class="registerContainer">
         <h3>Register For BlogBook</h3>
         <form action="app/users/register_user.php" method="post">
+        <?php
+                if(isset($_SESSION['error-reg'])){
+                    echo "<div class='error-message'>";
+                    echo $_SESSION['error-reg'];
+                    echo "</div>";
+                }
+            ?>
              <input class="authInput" name="username" type="text" placeholder="Username">
              <input class="authInput" name="password" type="password" placeholder="password">
              <input class="authInput" name="confirmed" type="password" placeholder="Confirm password">
