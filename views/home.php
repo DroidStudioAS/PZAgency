@@ -11,6 +11,11 @@
     <title>Homepage</title>
 </head>
 <body>
+    <header>
+        <?php
+            include "reusable/navigation.php"
+        ?>
+    </header>
     <div class ="homeContainer">
         <div class="profileContainer">
               <?php 

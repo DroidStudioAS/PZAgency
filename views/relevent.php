@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../app/style.css"/>
     <title>Posts</title>
 </head>
-<body>
+<body class="authContainer">
+    <h1 class="header">
+        <?php
+             require_once "../models/User.php";
+             echo "Posts by: " .  User::getUsernameById($_GET['user_id']);
+
+        ?>
+    </h1>
     <?php
         require_once "../controllers/PostController.php";
         require_once "../models/Post.php";
