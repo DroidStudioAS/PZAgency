@@ -3,14 +3,13 @@ require_once '../../models/Database.php';
 require_once '../../models/User.php';
 class UserController{
 
-    public function registerUser($username, $password){
+    public function registerUser($username, $password, $unhashedPass){
         $database = new Database();
         $conn = $database->getConnection();
 
         $userRegistered = $database->registerUser($username, $password);
-        if ($userRegistered){
-            header("Location: ../../views/home.php");
-        }
+        
+        return $database->loginUser($username, $unhashedPass);
 
     }
     public function checkIfUserAlreadyExists($username){

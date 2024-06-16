@@ -22,8 +22,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
        die();
     }
     //register user;
-    $userController->registerUser($username, $hashedPassword);
-    
+    $logUser = $userController->registerUser($username, $hashedPassword,$password);
+    if($logUser){
+        header("Location: ../../views/home.php");
+    }
 
 
 

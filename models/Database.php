@@ -47,6 +47,8 @@ class Database{
         $dbPass = $result["password"];
 
         if(!password_verify($pass, $dbPass)){
+            var_dump($pass);
+            var_dump($dbPass);
             return false;
         }
         
