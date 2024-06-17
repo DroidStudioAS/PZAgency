@@ -63,7 +63,7 @@
         <h3>
             Comments 
         </h3> 
-        As i have already mentioned, you can only add/view comments from the post permalink page (once you hit expand post).
+        As i have already mentioned, you can only add/view comments from the post permalink page (once you hit expand post). In the profile section there is a button leading to the your comments page, where you can edit and delete your comments.
     </li>
      <li>
         <h3>
