@@ -6,13 +6,12 @@
     <link rel="stylesheet" href="../app/style.css"/>
     <title>Post</title>
 </head>
-<body class="postsContainer">
+<body>
+    <?php include "reusable/navigation.php" ?>
+    <div class="postsContainer">
     <?php
         require_once "../models/Post.php";
         require_once "../models/Comment.php";
-
-        include "reusable/navigation.php";
-
         $postId = $_GET["post_id"];
         $post = Post::getPostById($postId);
         
@@ -90,6 +89,8 @@
     ?>
       
 
+
+    </div>
 
 </body>
 </html>

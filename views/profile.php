@@ -19,6 +19,10 @@
     include "reusable/navigation.php";
     ?>
     <div class="postsContainer">
+    <form method="GET" action="../app/comments/view_comments.php">
+    <input type="submit" class="header" value="View Your Comments"/>
+    </form>
+    
     <?php
         require_once "../controllers/PostController.php";
         $posts = Post::getUsersPosts($user->getId());
