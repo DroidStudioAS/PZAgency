@@ -14,10 +14,10 @@
 <p>Follow the next steps:</p>
 <ol>
     <li>
-       Go to phpMyAdmin (or any other database managment tool you prefer), and import the blogbook.sql file found in the root directory of this project.
+      Clone the project from GitHub, using the following link: <code> https://github.com/DroidStudioAS/PZAgency.git </code>
     </li>
     <li>
-      Clone the project from GitHub, using the following link: <code> https://github.com/DroidStudioAS/PZAgency.git </code>
+       Go to phpMyAdmin (or any other database managment tool you prefer), and import the blogbook.sql file found in the root directory of this project.
     </li>
     <li>
        Go to <code> models->Database.php</code> and make sure you change the values in the construct function to match your database configurations (All the lines you have to edit are marked with a commen "//CHANGE THIS").
