@@ -35,7 +35,10 @@
     </li>
 </ol>
 <p>
-    And you are set! Hope you enjoy BlogBook!
+    And you are set! Hope you enjoy BlogBook! <br>
+    If you want to login to a user that already has posts and comments: <br>
+    Username: testuser <br>
+    Password: 123456
 </p>
 
 <h2>2) App Overview</h2>
