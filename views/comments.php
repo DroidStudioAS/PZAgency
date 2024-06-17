@@ -19,6 +19,9 @@
             echo "<div class='commentContainer'>";
             $i=0;
             $username = "";
+            if(count($comments)==0){
+                echo "<h3 class='header'> You Have No Comments </h3>";
+            }
             foreach($comments as $comment){
                 if($i==0){
                     $username = User::getUsernameById($comment->getUserId());
