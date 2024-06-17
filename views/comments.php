@@ -34,8 +34,19 @@
                echo "<p>\"";
                echo $comment->getBody();
                echo "\"</p>";
+               echo "<div class='commentActionButtons'>";
+               echo "<form action='../app/comments/delete_comment.php' method='post' class=deleteComment>";
+               echo "<input type='submit' value='Delete \n Comment'/>";
+               echo "</form>";
+               echo "<form class=editComment>";
+               echo "<input type='submit' value='Edit \n Comment'/>";
+               echo "</form>";
+                //close comment action buttons 
+               echo "</div>";
+               //close comment
                echo "</div>";
             }
+        //close comment container
          echo "</div>"
         ?>
     </div>

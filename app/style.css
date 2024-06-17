@@ -438,6 +438,8 @@ body,
     border: 2px solid #1877f2;
     background-color: #fff;
     font-size: x-large;
+
+    position: relative;
 }
 
 .comment_even {
@@ -533,7 +535,7 @@ body,
     flex: 1;
 
     width: 100%;
-
+    font-family: "Rubik", sans-serif;
 
 }
 
@@ -552,4 +554,48 @@ body,
 
 .editPostPopup {
     z-index: 10;
+}
+
+.commentActionButtons {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10vw;
+    height: 10vh;
+    background-color: #0866ff;
+
+    border-top-right-radius: 40px;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+}
+
+.deleteComment,
+.editComment {
+    flex: 1;
+}
+
+.deleteComment input,
+.editComment input {
+    height: 10vh;
+    width: 5vw;
+    background-color: #0866ff;
+    color: white;
+}
+.editComment input{
+    border-top-right-radius: 40px;
+}
+
+.deleteComment {}
+
+.editComment {
+    border-top-left-radius: 40px;
+}
+
+.comment_even:hover .commentActionButtons {
+    opacity: 1;
 }
