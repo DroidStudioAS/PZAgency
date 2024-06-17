@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../app/style.css"/>
-    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Comments</title>
 </head>
 <body>
     <?php include "reusable/navigation.php" ?>
@@ -42,9 +43,13 @@
                echo "<input name='comment' type='hidden' value='". $comment->getId() . "' />";
                echo "<input type='submit' value='Delete \n Comment'/>";
                echo "</form>";
-               echo "<form class=editComment>";
-               echo "<input type='submit' value='Edit \n Comment'/>";
-               echo "</form>";
+               echo "<div onclick=\"showEditForm(" 
+               . $comment->getId() 
+               . ", '" 
+               . htmlspecialchars($comment->getBody(), ENT_QUOTES, 'UTF-8') 
+               . "')\" class='edit'>";
+                echo "Edit Your Comment";
+                echo "</div>";
                 //close comment action buttons 
                echo "</div>";
                //close comment
@@ -55,5 +60,32 @@
         ?>
     </div>
     
+    <div class="editCommentPopup">
+        <form method="post" action="../app/comments/edit_comment.php" id="editCommentForm">
+         <div onclick="closeEditForm()" class="closeButton">X</div>   
+        <input name="id" id="id" type="hidden" value=""/>
+        <label for="body">Your Comment:</label>
+        <textarea id="commentArea" name="body"></textarea>
+        <input class="editCommentTrigger" type="submit" value="submit"/>
+        </form>
+    </div>
+    <script>
+        function showEditForm(commentId, commentBody){
+            $(".editCommentPopup").css("display","flex");
+            $("#commentArea").val(commentBody);
+            $("#id").val(commentId);
+        }
+        function closeEditForm(){
+            $(".editCommentPopup").css("display","none");
+        }
+        $("#editCommentForm").on("submit", function(event){
+            if($("#commentArea").val().trim()===""){
+                event.preventDefault();
+                alert("You can not submit an empty comment");
+                return;
+            }
+        })
+
+    </script>
 </body>
 </html>

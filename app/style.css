@@ -248,7 +248,8 @@ body,
 }
 
 .addPostPopup,
-.editPostPopup {
+.editPostPopup,
+.editCommentPopup {
     display: none;
     flex-flow: column nowrap;
     justify-content: space-around;
@@ -266,17 +267,38 @@ body,
     border-radius: 20px;
 }
 
+.edit {
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Rubik", sans-serif;
+    color: white;
+}
+
 .addPostPopup form,
-.editPostPopup form {
+.editPostPopup form,
+.editCommentPopup form {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
 }
 
+.editCommentTrigger {
+    width: 80%;
+    height: 50%;
+    background-color: #0866ff;
+    border: 2px solid #fff;
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-size: large;
+}
+
 .titleInput,
 .addPostPopup textarea,
-.editPostPopup textarea {
+.editPostPopup textarea,
+.editCommentPopup textarea {
     padding: 15px;
     text-align: center;
     margin: 10px;
@@ -286,6 +308,13 @@ body,
     border-right: 2px solid #f0f2f5;
     font-size: x-large;
     border-radius: 12px;
+    resize: none;
+}
+
+.editCommentPopup textarea {
+    height: 20vh;
+    width: 20vw;
+    text-align: start;
 }
 
 .titleInput::placeholder {
@@ -586,7 +615,8 @@ body,
     background-color: #0866ff;
     color: white;
 }
-.editComment input{
+
+.editComment input {
     border-top-right-radius: 40px;
 }
 

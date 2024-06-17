@@ -58,4 +58,18 @@ class CommentController{
         }
         header('Location: view_comments.php');
     }
+    public static function editComment($commentId, $commentBody){
+        $database = new Database();
+        $conn = $database->getConnection();
+
+        $stmt = $conn->prepare("UPDATE comments SET body=? WHERE id=?");
+        $stmt->bind_param("si", $commentBody, $commentId);
+
+        $res = $stmt->execute();
+    
+        if(!$res){
+            $_SESSION['comment_error']="Comment Was Not Edited Please Try Again Later";
+        }
+        header("Location: view_comments.php");
+    }
 }
