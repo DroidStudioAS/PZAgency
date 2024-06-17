@@ -36,6 +36,7 @@
                echo "\"</p>";
                echo "<div class='commentActionButtons'>";
                echo "<form action='../app/comments/delete_comment.php' method='post' class=deleteComment>";
+               echo "<input name='comment' type='hidden' value='". $comment->getId() . "' />";
                echo "<input type='submit' value='Delete \n Comment'/>";
                echo "</form>";
                echo "<form class=editComment>";

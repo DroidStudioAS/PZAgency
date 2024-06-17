@@ -20,5 +20,8 @@ public function getBody(){
 public function getUserId(){
     return $this->userId;
 }
+public function getId(){
+    return $this->id;
+}
 
 }

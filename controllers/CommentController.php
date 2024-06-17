@@ -46,4 +46,16 @@ class CommentController{
         $_SESSION["comments"]=serialize($returnComments);
         header("Location: ../../views/comments.php");
     }
+    public static function deleteComment ($commentId){
+        $database = new Database();
+        $conn = $database->getConnection();
+
+        $stmt = $conn->prepare("DELETE FROM comments WHERE id=?");
+        $stmt->bind_param("i", $commentId);
+        $excecuted = $stmt->execute();
+        if(!$excecuted){
+            $_SESSION['comment_error']="Comment could not be deleted right now, please try again later";
+        }
+        header('Location: view_comments.php');
+    }
 }
