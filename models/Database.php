@@ -9,10 +9,10 @@ class Database{
    private $conn;
 
    public function __construct(){
-    $this->servername = "localhost";
-    $this->username = "root";
-    $this->password = "";
-    $this->dbname = "BlogBook";
+    $this->servername = "localhost"; //CHANGE THIS
+    $this->username = "root"; //CHANGE THIS
+    $this->password = ""; //CHANGE THIS
+    $this->dbname = "BlogBook"; //CHANGE THIS
 
     // Create connection
     $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
